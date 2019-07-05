@@ -1,6 +1,5 @@
 import express =  require("express");
 
-const PORT = 3000
 
 export class Calculadora
 {
@@ -33,8 +32,10 @@ let main = () =>
     })
 
     // Iniciamos la ejecucion del server
-    app.listen(PORT, ()=>{
-        console.log(`Server running in port ${PORT}`);
+    let puerto = process.env.PORT || 3000
+    
+    app.listen(process.env.PORT, ()=>{
+        console.log(`Server running in port ${process.env.PORT}`);
     })
 }
 
